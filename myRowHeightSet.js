@@ -33,3 +33,4 @@ function myRowHeightSet() {
     sheet.setRowHeight(i, height1+(any*height2));
   }
 }
+ 

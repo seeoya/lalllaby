@@ -1,4 +1,4 @@
-
+   
   최초 업로드 2020. 05. 30. / 최종 수정 2020. 05. 30.
   https://github.com/seeoya/lalllaby
   둘이서 수사(후타리소우사, 후타소사) Roll20 커스텀 시트 html/css 백업
@@ -12,4 +12,4 @@
   사용법 : 게임 설정 > Character Sheet Template > Custom 선택
           > HTML Layout에 hutaSheet.html 내용 전체 복사-붙여넣기
           > CSS Styling에 hutaSheet.css 내용 전체 복사-붙여넣기
-           
+            

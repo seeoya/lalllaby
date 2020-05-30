@@ -1,8 +1,8 @@
 
 /*
-2020. 05. 19.
-https://github.com/seeoya/lalllaby
-구글 스프레드 시트 행 크기 설정하는 스크립트 백업
+  최초 업로드 2020. 05. 19. / 최종 수정 2020. 05. 19.
+  https://github.com/seeoya/lalllaby
+  구글 스프레드 시트 행 크기 설정하는 스크립트 백업
 */
 
 function myRowHeightSet() {

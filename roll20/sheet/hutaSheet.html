@@ -1,0 +1,1009 @@
+   
+<!--
+  최초 업로드 2020. 05. 30. / 최종 수정 2020. 05. 30.
+  https://github.com/seeoya/lalllaby
+  둘이서 수사(후타리소우사, 후타소사) Roll20 커스텀 시트 html 백업
+  
+  개인이 사용하기 위해 제작한 시트이며, 문제 발생 시 수정 및 삭제됩니다.
+  문의/오류 신고/수정 제안은 @TQ_Romantic의 DM으로 부탁드립니다.
+-->
+
+<div class="sheet-hutaSheet">
+
+	<input type="radio" name="attr_tabSelect" class="sheet-detectiveTab" value="detectiveTab" checked="checked" />
+	<span class="sheet-detTab">탐정</span> <span class="sheet-asiTab">조수</span>
+	<input type="radio" name="attr_tabSelect" class="sheet-assistantTab" value="assistantTab" />
+
+	<!----------------- 탐정 ----------------->
+	<div class="sheet-huta-detective">
+		<div class="sheet-base-detective">
+			<div class="sheet-profile-detective">
+				<table>
+					<tr>
+						<td colspan="4">탐정 프로필</td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>클래스</td>
+						<td colspan="3"><select name="" id="" class="detSel">
+								<option value="" selected="selected">선택</option>
+								<option value="" class="detSelClass1">운명의 혈통</option>
+								<option value="" class="detSelClass2">천성의 재능</option>
+								<option value="" class="detSelClass3">매니아</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>배경</td>
+						<td colspan="3"><select name="" id="" class="detSel2">
+								<option value="" selected="selected">선택</option>
+								<option value="" class="detSel2Class" disabled="disabled">- 운명의 혈통 -</option>
+								<option value="" class="detClass1">명탐정의 선조(실재)</option>
+								<option value="" class="detClass1">명탐정의 선조(허상)</option>
+								<option value="" class="detClass1">부모가 세계적인 탐정</option>
+								<option value="" class="detClass1">거리의 명탐정</option>
+								<option value="" class="detClass1">추리 작가</option>
+								<option value="" class="detClass1">양부모</option>
+								<option value="" class="detClass1">타락한 명탐정</option>
+								<option value="" class="detClass1">대죄인의 피</option>
+								<option value="" class="detClass1">숨겨진 혈통</option>
+								<option value="" class="detClass1">클론</option>
+								<option value="" class="detSel2Class" disabled="disabled">- 천성의 재능 -</option>
+								<option value="" class="detClass2">초 엘리트</option>
+								<option value="" class="detClass2">순간기억 능력</option>
+								<option value="" class="detClass2">지식의 샘</option>
+								<option value="" class="detClass2">스파르타식 교육</option>
+								<option value="" class="detClass2">이미 명탐정</option>
+								<option value="" class="detClass2">동경하는 뒷모습</option>
+								<option value="" class="detClass2">라이벌</option>
+								<option value="" class="detClass2">전직 명탐정</option>
+								<option value="" class="detClass2">고립된 명탐정</option>
+								<option value="" class="detClass2">인공 명탐정</option>
+								<option value="" class="detSel2Class" disabled="disabled">- 매니아 -</option>
+								<option value="" class="detClass3">서스펜스 매니아</option>
+								<option value="" class="detClass3">시체 매니아</option>
+								<option value="" class="detClass3">과학 매니아</option>
+								<option value="" class="detClass3">흔히 말하는 오타쿠</option>
+								<option value="" class="detClass3">인간 매니아</option>
+								<option value="" class="detClass3">서적 매니아</option>
+								<option value="" class="detClass3">오컬트 매니아</option>
+								<option value="" class="detClass3">탐정 매니아</option>
+								<option value="" class="detClass3">폭주하는 지식욕</option>
+								<option value="" class="detClass3">정의의 매니아</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>연령</td>
+						<td><input type="text" /></td>
+						<td>신장</td>
+						<td><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>직업</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>패션 특징</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>좋아하는 것</td>
+						<td><input type="text" /></td>
+						<td>싫어하는 것</td>
+						<td><input type="text" /></td>
+					</tr>
+				</table>
+			</div>
+			<!-- profile detective end -->
+
+			<div class="sheet-habit-detective">
+				<table>
+					<tr>
+						<td colspan="2"><button class="rollText" type='roll' value='&{template:huta-det-habit} {{roll1=[[1d6]]}} {{roll2=[[1d10]]}} {{roll3=[[1d10]]}} {{roll4=[[1d9]]}} {{habit1=@{detHabitSel1}}} {{habit2=@{detHabitSel2}}} {{habit3=@{detHabitSel3}}} {{habit4=@{detHabitSel4}}} {{habit5=@{detHabitSel4}}} {{habit6=@{detHabitSel6}}}'>이상한 버릇 발동!</button></td>
+					<tr>
+						<td>1</td>
+						<td><input type="text" name="attr_detHabitSel1" value="자유기재" /></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><input type="text" name="attr_detHabitSel2" value="자유기재" /></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td><input type="text" name="attr_detHabitSel3" value="자유기재" /></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td><select name="attr_detHabitSel4" id="">
+								<option value="「 이상한 버릇·지껄이다 표 」">「 이상한 버릇·지껄이다 표 」</option>
+								<option value="「 이상한 버릇·강압적인 조사 표 」">「 이상한 버릇·강압적인 조사 표 」</option>
+								<option value="「 이상한 버릇·얼버무리기 표 」">「 이상한 버릇·얼버무리기 표 」</option>
+								<option value="「 이상한 버릇·사건에 몰두 표 」">「 이상한 버릇·사건에 몰두 표 」</option>
+								<option value="「 이상한 버릇·파트너와…… 표 」">「 이상한 버릇·파트너와…… 표 」</option>
+								<option value="「 이상한 버릇·무언가를 하고 있다 표 」">「 이상한 버릇·무언가를 하고 있다 표 」</option>
+								<option value="「 이상한 버릇·갑작스런 번뜩임 표 」">「 이상한 버릇·갑작스런 번뜩임 표 」</option>
+								<option value="「 이상한 버릇·희로애락 표 」">「 이상한 버릇·희로애락 표 」</option>
+								<option value="「 이상한 버릇·기상천외 표 」">「 이상한 버릇·기상천외 표 」</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td><select name="attr_detHabitSel5" id="">
+								<option value="「 이상한 버릇·지껄이다 표 」">「 이상한 버릇·지껄이다 표 」</option>
+								<option value="「 이상한 버릇·강압적인 조사 표 」">「 이상한 버릇·강압적인 조사 표 」</option>
+								<option value="「 이상한 버릇·얼버무리기 표 」">「 이상한 버릇·얼버무리기 표 」</option>
+								<option value="「 이상한 버릇·사건에 몰두 표 」">「 이상한 버릇·사건에 몰두 표 」</option>
+								<option value="「 이상한 버릇·파트너와…… 표 」">「 이상한 버릇·파트너와…… 표 」</option>
+								<option value="「 이상한 버릇·무언가를 하고 있다 표 」">「 이상한 버릇·무언가를 하고 있다 표 」</option>
+								<option value="「 이상한 버릇·갑작스런 번뜩임 표 」">「 이상한 버릇·갑작스런 번뜩임 표 」</option>
+								<option value="「 이상한 버릇·희로애락 표 」">「 이상한 버릇·희로애락 표 」</option>
+								<option value="「 이상한 버릇·기상천외 표 」">「 이상한 버릇·기상천외 표 」</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td><input type="text" name="attr_detHabitSel6" value="랜덤" /></td>
+					</tr>
+					<tr>
+						<td><button type="roll" value="&{template:huta-det-habit} {{roll1=[[1d0]]}} {{roll2=[[1d10]]}} {{roll3=[[@{detHabitSel0}d1]]}}"></button></td>
+						<td><select name="attr_detHabitSel0" id="" class="inputText80">
+								<option value="1">「 이상한 버릇·지껄이다 표 」</option>
+								<option value="2">「 이상한 버릇·강압적인 조사 표 」</option>
+								<option value="3">「 이상한 버릇·얼버무리기 표 」</option>
+								<option value="4">「 이상한 버릇·사건에 몰두 표 」</option>
+								<option value="5">「 이상한 버릇·파트너와…… 표 」</option>
+								<option value="6">「 이상한 버릇·무언가를 하고 있다 표 」</option>
+								<option value="7">「 이상한 버릇·갑작스런 번뜩임 표 」</option>
+								<option value="8">「 이상한 버릇·희로애락 표 」</option>
+								<option value="9">「 이상한 버릇·기상천외 표 」</option>
+							</select></td>
+					</tr>
+				</table>
+			</div>
+			<!-- habit detective end -->
+		</div>
+		<!-- base-detective end -->
+
+		<div class="sheet-skills-detective">
+			<table>
+				<tr>
+					<td colspan="8">기능</td>
+				</tr>
+				<tr>
+					<td colspan="4"><button type="roll" class="rollText" value="&{template:huta-roll} {{name=1D10 판정}} {{count1=[[1d0]]}}{{count2=[[1d1]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_1d10_roll">1D10</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=2D10 판정}} {{count1=[[1d1]]}}{{count2=[[1d1]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_2d10_roll">2D10</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=3D10 판정}} {{count1=[[1d1]]}}{{count2=[[1d0]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_3d10_roll">3D10</button></td>
+					<td colspan="4">
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=1D6 판정}} {{count1=[[1d0]]}}{{count2=[[1d1]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_1d6_roll">1D6</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=2D6 판정}} {{count1=[[1d1]]}}{{count2=[[1d1]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_2d6_roll">2D6</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=3D6 판정}} {{count1=[[1d1]]}}{{count2=[[1d0]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_3d6_roll">3D6</button>
+					</td>
+				</tr>
+				<tr>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>통찰</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>감식</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>인간</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>육체</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_lie_checkbox1" value="1" /> <input type="checkbox" name="attr_det_lie_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{lie_text}}} {{count1=[[1d@{det_lie_checkbox1}]]}}{{count2=[[1d@{det_lie_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_lie">거짓말</button></td>
+					<td><input type="checkbox" name="attr_det_traffic_checkbox1" value="1" /> <input type="checkbox" name="attr_det_traffic_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{traffic_text}}} {{count1=[[1d@{det_traffic_checkbox1}]]}}{{count2=[[1d@{det_traffic_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_traffic">교통</button></td>
+					<td><input type="checkbox" name="attr_det_social_checkbox1" value="1" /> <input type="checkbox" name="attr_det_social_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{social_text}}} {{count1=[[1d@{det_social_checkbox1}]]}}{{count2=[[1d@{det_social_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_social">사교</button></td>
+					<td><input type="checkbox" name="attr_det_tie_checkbox1" value="1" /> <input type="checkbox" name="attr_det_tie_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{tie_text}}} {{count1=[[1d@{det_tie_checkbox1}]]}}{{count2=[[1d@{det_tie_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_tie">포박</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_change_checkbox1" value="1" /> <input type="checkbox" name="attr_det_change_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{change_text}}} {{count1=[[1d@{det_change_checkbox1}]]}}{{count2=[[1d@{det_change_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_change">변화</button></td>
+					<td><input type="checkbox" name="attr_det_information_checkbox1" value="1" /> <input type="checkbox" name="attr_det_information_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{information_text}}} {{count1=[[1d@{det_information_checkbox1}]]}}{{count2=[[1d@{det_information_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_information">정보</button></td>
+					<td><input type="checkbox" name="attr_det_housework_checkbox1" value="1" /> <input type="checkbox" name="attr_det_housework_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{housework_text}}} {{count1=[[1d@{det_housework_checkbox1}]]}}{{count2=[[1d@{det_housework_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_housework">가사</button></td>
+					<td><input type="checkbox" name="attr_det_defense_checkbox1" value="1" /> <input type="checkbox" name="attr_det_defense_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{defense_text}}} {{count1=[[1d@{det_defense_checkbox1}]]}}{{count2=[[1d@{det_defense_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_defense">방어</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_appearance_checkbox1" value="1" /> <input type="checkbox" name="attr_det_appearance_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{appearance_text}}} {{count1=[[1d@{det_appearance_checkbox1}]]}}{{count2=[[1d@{det_appearance_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_appearance">외모</button></td>
+					<td><input type="checkbox" name="attr_det_fingerprint_checkbox1" value="1" /> <input type="checkbox" name="attr_det_fingerprint_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{fingerprint_text}}} {{count1=[[1d@{det_fingerprint_checkbox1}]]}}{{count2=[[1d@{det_fingerprint_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_fingerprint">지문</button></td>
+					<td><input type="checkbox" name="attr_det_rumor_checkbox1" value="1" /> <input type="checkbox" name="attr_det_rumor_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{rumor_text}}} {{count1=[[1d@{det_rumor_checkbox1}]]}}{{count2=[[1d@{det_rumor_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_rumor">소문</button></td>
+					<td><input type="checkbox" name="attr_det_temper_checkbox1" value="1" /> <input type="checkbox" name="attr_det_temper_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{temper_text}}} {{count1=[[1d@{det_temper_checkbox1}]]}}{{count2=[[1d@{det_temper_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_temper">근성</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_physical_checkbox1" value="1" /> <input type="checkbox" name="attr_det_physical_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{physical_text}}} {{count1=[[1d@{det_physical_checkbox1}]]}}{{count2=[[1d@{det_physical_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_physical">물리</button></td>
+					<td><input type="checkbox" name="attr_det_science_checkbox1" value="1" /> <input type="checkbox" name="attr_det_science_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{science_text}}} {{count1=[[1d@{det_science_checkbox1}]]}}{{count2=[[1d@{det_science_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_science">과학</button></td>
+					<td><input type="checkbox" name="attr_det_persuasion_checkbox1" value="1" /> <input type="checkbox" name="attr_det_persuasion_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{persuasion_text}}} {{count1=[[1d@{det_persuasion_checkbox1}]]}}{{count2=[[1d@{det_persuasion_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_persuasion">설득</button></td>
+					<td><input type="checkbox" name="attr_det_strength_checkbox1" value="1" /> <input type="checkbox" name="attr_det_strength_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{strength_text}}} {{count1=[[1d@{det_strength_checkbox1}]]}}{{count2=[[1d@{det_strength_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_strength">체력</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_scene_checkbox1" value="1" /> <input type="checkbox" name="attr_det_scene_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{scene_text}}} {{count1=[[1d@{det_scene_checkbox1}]]}}{{count2=[[1d@{det_scene_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_scene">현장</button></td>
+					<td><input type="checkbox" name="attr_det_forensic_checkbox1" value="1" /> <input type="checkbox" name="attr_det_forensic_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{forensic_text}}} {{count1=[[1d@{det_forensic_checkbox1}]]}}{{count2=[[1d@{det_forensic_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_forensic">법의학</button></td>
+					<td><input type="checkbox" name="attr_det_trend_checkbox1" value="1" /> <input type="checkbox" name="attr_det_trend_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{trend_text}}} {{count1=[[1d@{det_trend_checkbox1}]]}}{{count2=[[1d@{det_trend_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_trend">유행</button></td>
+					<td><input type="checkbox" name="attr_det_breakthrough_checkbox1" value="1" /> <input type="checkbox" name="attr_det_breakthrough_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{breakthrough_text}}} {{count1=[[1d@{det_breakthrough_checkbox1}]]}}{{count2=[[1d@{det_breakthrough_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_breakthrough">돌파</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_det_weather_checkbox1" value="1" /> <input type="checkbox" name="attr_det_weather_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{weather_text}}} {{count1=[[1d@{det_weather_checkbox1}]]}}{{count2=[[1d@{det_weather_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_weather">날씨</button></td>
+					<td><input type="checkbox" name="attr_det_biology_checkbox1" value="1" /> <input type="checkbox" name="attr_det_biology_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{biology_text}}} {{count1=[[1d@{det_biology_checkbox1}]]}}{{count2=[[1d@{det_biology_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_biology">생물</button></td>
+					<td><input type="checkbox" name="attr_det_business_checkbox1" value="1" /> <input type="checkbox" name="attr_det_business_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{business_text}}} {{count1=[[1d@{det_business_checkbox1}]]}}{{count2=[[1d@{det_business_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_business">비즈니스</button></td>
+					<td><input type="checkbox" name="attr_det_trace_checkbox1" value="1" /> <input type="checkbox" name="attr_det_trace_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{trace_text}}} {{count1=[[1d@{det_trace_checkbox1}]]}}{{count2=[[1d@{det_trace_checkbox2}]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="det_roll_trace">추적</button></td>
+				</tr>
+			</table>
+		</div>
+		<!-- skills detective end -->
+
+		<div class="sheet-actions-detective">
+			<table class="sheet-actions-detective-first">
+				<tr>
+					<td colspan="5">탐정 액션</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>이름</td>
+					<td>타입</td>
+					<td>비용</td>
+					<td>효과</td>
+				</tr>
+				<tr>
+					<td><button type="roll" value="&{template:huta-action} {{name=@{detActionName0}}} {{sel=@{detActionSel0}}} {{cost=@{detActionCost0}}} {{description=@{detActionDesc0}}}"></button></td>
+					<td><input type="text" value="둘이서 수사" name="attr_detActionName0" /></td>
+					<td><select name="attr_detActionSel0" id="">
+							<option value="보조" selected="selected">보조</option>
+							<option value="상주">상주</option>
+						</select></td>
+					<td><input type="text" value="없음" name="attr_detActionCost0" /></td>
+					<td><textarea rows="" cols="" name="attr_detActionDesc0">조사 페이즈 씬이 종료했을 때 사용할 수 있다. 자신과 파트너의 서로에 대한 감정을 하나 골라서 강한 감정으로 하는 것으로 다음에 하는 씬을 「둘이서 수사 씬」으로 변경할 수 있다.</textarea></td>
+				</tr>
+			</table>
+			<fieldset class="repeating_actionsDetective">
+				<table>
+					<tr>
+						<td><button type="roll" value="&{template:huta-action} {{name=@{detActionName}}} {{sel=@{detActionSel}}} {{cost=@{detActionCost}}} {{description=@{detActionDesc}}}"></button></td>
+						<td><input type="text" value="" name="attr_detActionName" /></td>
+						<td><select name="attr_detActionSel" id="">
+								<option value="보조" selected="selected">보조</option>
+								<option value="상주">상주</option>
+							</select></td>
+						<td><input type="text" value="" name="attr_detActionCost" /></td>
+						<td><textarea rows="" cols="" name="attr_detActionDesc"></textarea></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<!-- actions detective end -->
+	</div>
+	<!-- huta detective end -->
+
+	<!----------------- 조수 ----------------->
+
+	<div class="sheet-huta-assistant">
+		<div class="sheet-base-assistant">
+			<div class="sheet-profile-assistant">
+				<table>
+					<tr>
+						<td colspan="4">조수 프로필</td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>클래스</td>
+						<td colspan="3"><select name="" id="">
+								<option value="">선택</option>
+								<option value="">정의로운 사람</option>
+								<option value="">정열적인 사람</option>
+								<option value="">휘말리기 쉬운 사람</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>배경</td>
+						<td colspan="3"><select name="" id="">
+								<option value="">선택</option>
+								<option value="">-정의로운 사람-</option>
+								<option value="">친절한 사람</option>
+								<option value="">용서할 수 없다</option>
+								<option value="">납득하고 싶다</option>
+								<option value="">이용하고 있다</option>
+								<option value="">의지할 수 있는 협력자</option>
+								<option value="">정의로운 동지</option>
+								<option value="">-정열적인 사람-</option>
+								<option value="">능력에 반했다</option>
+								<option value="">인품에 반했다</option>
+								<option value="">한 눈에 반했다</option>
+								<option value="">마음이 맞았다</option>
+								<option value="">대립</option>
+								<option value="">내버려 둘 수 없다</option>
+								<option value="">-휘말리기 쉬운 사람-</option>
+								<option value="">일방적으로 마음에 들어졌다</option>
+								<option value="">리액션 담당</option>
+								<option value="">과거의 빛</option>
+								<option value="">필요한 인재</option>
+								<option value="">친한 사이</option>
+								<option value="">우연의 연속</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>연령</td>
+						<td><input type="text" /></td>
+						<td>신장</td>
+						<td><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>직업</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>패션 특징</td>
+						<td colspan="3"><input type="text" /></td>
+					</tr>
+					<tr>
+						<td>좋아하는 것</td>
+						<td><input type="text" /></td>
+						<td>싫어하는 것</td>
+						<td><input type="text" /></td>
+					</tr>
+				</table>
+			</div>
+			<!-- profile assistant end -->
+
+			<div class="sheet-relax-assistant">
+				<table>
+					<tr>
+						<td>여유</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="attr_relaxAsi1" checked="checked" /> <input type="checkbox" name="attr_relaxAsi2" checked="checked" /> <input type="checkbox" name="attr_relaxAsi3" checked="checked" /> <input type="checkbox" name="attr_relaxAsi4" /> <input type="checkbox" name="attr_relaxAsi5" /> <input type="checkbox" name="attr_relaxAsi6" /> <input type="checkbox" name="attr_relaxAsi7" /> <input type="checkbox" name="attr_relaxAsi8" /> <input type="checkbox" name="attr_relaxAsi9" /> <input type="checkbox" name="attr_relaxAsi10" /><br> <input type="checkbox" name="attr_relaxAsi11" /> <input type="checkbox" name="attr_relaxAsi12" /> <input type="checkbox" name="attr_relaxAsi13" /> <input type="checkbox" name="attr_relaxAsi14" /> <input type="checkbox" name="attr_relaxAsi15" /> <input type="checkbox" name="attr_relaxAsi16" /> <input type="checkbox" name="attr_relaxAsi17" /> <input type="checkbox" name="attr_relaxAsi18" /> <input type="checkbox"
+								name="attr_relaxAsi19"
+							/> <input type="checkbox" name="attr_relaxAsi20" /> <!-- <br><input type="checkbox" name="attr_relaxAsi21" /> <input type="checkbox" name="attr_relaxAsi22" /> <input type="checkbox" name="attr_relaxAsi23" /> <input type="checkbox" name="attr_relaxAsi24" /> <input type="checkbox" name="attr_relaxAsi25" /> --></td>
+					</tr>
+					<tr>
+						<td>마음고생</td>
+					</tr>
+
+
+					<tr>
+						<td><input type="checkbox" name="attr_nRelaxAsi1" /> <input type="checkbox" name="attr_nRelaxAsi2" /> <input type="checkbox" name="attr_nRelaxAsi3" /></td>
+					</tr>
+				</table>
+			</div>
+			<!-- relax assistant end -->
+		</div>
+		<!-- base-assistant end -->
+		<div class="sheet-skills-assistant">
+			<table>
+				<tr>
+					<td colspan="8">기능</td>
+				</tr>
+				<tr>
+					<td colspan="4"><button type="roll" class="rollText" value="&{template:huta-roll} {{name=1D10 판정}} {{count1=[[1d0]]}}{{count2=[[1d1]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_1d10_roll">1D10</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=2D10 판정}} {{count1=[[1d1]]}}{{count2=[[1d1]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_2d10_roll">2D10</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=3D10 판정}} {{count1=[[1d1]]}}{{count2=[[1d0]]}}{{roll1=[[1d10]]}}{{roll2=[[1d10]]}}{{roll3=[[1d10]]}}" name="huta_3d10_roll">3D10</button></td>
+					<td colspan="4">
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=1D6 판정}} {{count1=[[1d0]]}}{{count2=[[1d1]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_1d6_roll">1D6</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=2D6 판정}} {{count1=[[1d1]]}}{{count2=[[1d1]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_2d6_roll">2D6</button>
+						<button type="roll" class="rollText" value="&{template:huta-roll} {{name=3D6 판정}} {{count1=[[1d1]]}}{{count2=[[1d0]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="huta_3d6_roll">3D6</button>
+					</td>
+				</tr>
+				<tr>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>통찰</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>감식</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>인간</td>
+					<td>+&nbsp;&nbsp;&nbsp;-</td>
+					<td>육체</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_lie_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_lie_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{lie_text}}} {{count1=[[1d@{asi_lie_checkbox1}]]}}{{count2=[[1d@{asi_lie_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_lie">거짓말</button></td>
+					<td><input type="checkbox" name="attr_asi_traffic_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_traffic_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{traffic_text}}} {{count1=[[1d@{asi_traffic_checkbox1}]]}}{{count2=[[1d@{asi_traffic_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_traffic">교통</button></td>
+					<td><input type="checkbox" name="attr_asi_social_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_social_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{social_text}}} {{count1=[[1d@{asi_social_checkbox1}]]}}{{count2=[[1d@{asi_social_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_social">사교</button></td>
+					<td><input type="checkbox" name="attr_asi_tie_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_tie_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{tie_text}}} {{count1=[[1d@{asi_tie_checkbox1}]]}}{{count2=[[1d@{asi_tie_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_tie">포박</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_change_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_change_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{change_text}}} {{count1=[[1d@{asi_change_checkbox1}]]}}{{count2=[[1d@{asi_change_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_change">변화</button></td>
+					<td><input type="checkbox" name="attr_asi_information_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_information_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{information_text}}} {{count1=[[1d@{asi_information_checkbox1}]]}}{{count2=[[1d@{asi_information_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_information">정보</button></td>
+					<td><input type="checkbox" name="attr_asi_housework_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_housework_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{housework_text}}} {{count1=[[1d@{asi_housework_checkbox1}]]}}{{count2=[[1d@{asi_housework_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_housework">가사</button></td>
+					<td><input type="checkbox" name="attr_asi_defense_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_defense_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{defense_text}}} {{count1=[[1d@{asi_defense_checkbox1}]]}}{{count2=[[1d@{asi_defense_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_defense">방어</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_appearance_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_appearance_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{appearance_text}}} {{count1=[[1d@{asi_appearance_checkbox1}]]}}{{count2=[[1d@{asi_appearance_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_appearance">외모</button></td>
+					<td><input type="checkbox" name="attr_asi_fingerprint_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_fingerprint_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{fingerprint_text}}} {{count1=[[1d@{asi_fingerprint_checkbox1}]]}}{{count2=[[1d@{asi_fingerprint_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_fingerprint">지문</button></td>
+					<td><input type="checkbox" name="attr_asi_rumor_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_rumor_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{rumor_text}}} {{count1=[[1d@{asi_rumor_checkbox1}]]}}{{count2=[[1d@{asi_rumor_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_rumor">소문</button></td>
+					<td><input type="checkbox" name="attr_asi_temper_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_temper_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{temper_text}}} {{count1=[[1d@{asi_temper_checkbox1}]]}}{{count2=[[1d@{asi_temper_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_temper">근성</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_physical_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_physical_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{physical_text}}} {{count1=[[1d@{asi_physical_checkbox1}]]}}{{count2=[[1d@{asi_physical_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_physical">물리</button></td>
+					<td><input type="checkbox" name="attr_asi_science_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_science_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{science_text}}} {{count1=[[1d@{asi_science_checkbox1}]]}}{{count2=[[1d@{asi_science_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_science">과학</button></td>
+					<td><input type="checkbox" name="attr_asi_persuasion_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_persuasion_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{persuasion_text}}} {{count1=[[1d@{asi_persuasion_checkbox1}]]}}{{count2=[[1d@{asi_persuasion_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_persuasion">설득</button></td>
+					<td><input type="checkbox" name="attr_asi_strength_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_strength_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{strength_text}}} {{count1=[[1d@{asi_strength_checkbox1}]]}}{{count2=[[1d@{asi_strength_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_strength">체력</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_scene_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_scene_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{scene_text}}} {{count1=[[1d@{asi_scene_checkbox1}]]}}{{count2=[[1d@{asi_scene_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_scene">현장</button></td>
+					<td><input type="checkbox" name="attr_asi_forensic_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_forensic_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{forensic_text}}} {{count1=[[1d@{asi_forensic_checkbox1}]]}}{{count2=[[1d@{asi_forensic_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_forensic">법의학</button></td>
+					<td><input type="checkbox" name="attr_asi_trend_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_trend_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{trend_text}}} {{count1=[[1d@{asi_trend_checkbox1}]]}}{{count2=[[1d@{asi_trend_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_trend">유행</button></td>
+					<td><input type="checkbox" name="attr_asi_breakthrough_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_breakthrough_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{breakthrough_text}}} {{count1=[[1d@{asi_breakthrough_checkbox1}]]}}{{count2=[[1d@{asi_breakthrough_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_breakthrough">돌파</button></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="attr_asi_weather_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_weather_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{weather_text}}} {{count1=[[1d@{asi_weather_checkbox1}]]}}{{count2=[[1d@{asi_weather_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_weather">날씨</button></td>
+					<td><input type="checkbox" name="attr_asi_biology_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_biology_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{biology_text}}} {{count1=[[1d@{asi_biology_checkbox1}]]}}{{count2=[[1d@{asi_biology_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_biology">생물</button></td>
+					<td><input type="checkbox" name="attr_asi_business_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_business_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{business_text}}} {{count1=[[1d@{asi_business_checkbox1}]]}}{{count2=[[1d@{asi_business_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_business">비즈니스</button></td>
+					<td><input type="checkbox" name="attr_asi_trace_checkbox1" value="1" /> <input type="checkbox" name="attr_asi_trace_checkbox2" value="1" /></td>
+					<td><button class="skillsButton" type="roll" value="&{template:huta-roll} {{name=@{trace_text}}} {{count1=[[1d@{asi_trace_checkbox1}]]}}{{count2=[[1d@{asi_trace_checkbox2}]]}}{{roll1=[[1d6]]}}{{roll2=[[1d6]]}}{{roll3=[[1d6]]}}" name="asi_roll_trace">추적</button></td>
+				</tr>
+			</table>
+		</div>
+		<!-- skills assistant end -->
+
+		<div class="sheet-actions-assistant">
+			<table class="sheet-actions-assistant-first">
+				<tr>
+					<td colspan="5">조수 액션</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>이름</td>
+					<td>타입</td>
+					<td>비용</td>
+					<td>효과</td>
+				</tr>
+				<tr>
+					<td><button type="roll" value="&{template:huta-action} {{name=@{asiActionName0}}} {{sel=@{asiActionSel0}}} {{cost=@{asiActionCost0}}} {{description=@{asiActionDesc0}}}"></button></td>
+					<td><input type="text" value="뒤쫓기" name="attr_asiActionName0" /></td>
+					<td><select name="attr_asiActionSel0" id="">
+							<option value="보조" selected="selected">보조</option>
+							<option value="상주">상주</option>
+						</select></td>
+					<td><input type="text" value="1" name="attr_asiActionCost0" /></td>
+					<td><textarea rows="" cols="" name="attr_asiActionDesc0">판정 주사위를 굴린 뒤, 사용할 수 있다. 자신의 파트너를 향한 감정을 하나 골라서 강한 감정으로 하는 것으로 판정에 사용한 자신의 주사위를 다시 굴릴 수 있다. 이 때, 굴리는 주사위를 십면체로 바꿀 수 있다.</textarea></td>
+				</tr>
+			</table>
+			<fieldset class="repeating_actionsAssistant">
+				<table>
+					<tr>
+						<td><button type="roll" value="&{template:huta-action} {{name=@{asiActionName}}} {{sel=@{asiActionSel}}} {{cost=@{asiActionCost}}} {{description=@{asiActionDesc}}}"></button></td>
+						<td><input type="text" value="" name="attr_asiActionName" /></td>
+						<td><select name="attr_asiActionSel" id="">
+								<option value="보조" selected="selected">보조</option>
+								<option value="상주">상주</option>
+							</select></td>
+						<td><input type="text" value="" name="attr_asiActionCost" /></td>
+						<td><textarea rows="" cols="" name="attr_asiActionDesc"></textarea></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<!-- actions assistant end -->
+
+		<div class="sheet-guests-assistant">
+			<table class="sheet-guests-assistant-first">
+				<tr>
+					<td colspan="4">게스트</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>기능</td>
+					<td>관계</td>
+					<td>메모</td>
+				</tr>
+			</table>
+			<fieldset class="repeating_guestsAssistant">
+				<table>
+					<tr>
+						<td><input type="text" name="attr_guestName" /></td>
+						<td><select name="attr_guestSkill">
+								<option value="">선택</option>
+								<option value="">-통찰-</option>
+								<option value="">거짓말</option>
+								<option value="">변화</option>
+								<option value="">외모</option>
+								<option value="">물리</option>
+								<option value="">현장</option>
+								<option value="">날씨</option>
+								<option value="">-감식-</option>
+								<option value="">교통</option>
+								<option value="">정보</option>
+								<option value="">지문</option>
+								<option value="">과학</option>
+								<option value="">법의학</option>
+								<option value="">생물</option>
+								<option value="">-인간-</option>
+								<option value="">사교</option>
+								<option value="">가사</option>
+								<option value="">소문</option>
+								<option value="">설득</option>
+								<option value="">유행</option>
+								<option value="">비지니스</option>
+								<option value="">-육체-</option>
+								<option value="">포박</option>
+								<option value="">방어</option>
+								<option value="">근성</option>
+								<option value="">체력</option>
+								<option value="">돌파</option>
+								<option value="">추적</option>
+							</select></td>
+						<td><input type="text" name="attr_guestRelation" /></td>
+						<td><textarea rows="" cols="" name="attr_guestMemo"></textarea></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<!-- guests assistant end -->
+
+	</div>
+	<!-- huta assistant end -->
+	<!-- </div> -->
+	<!-- hutaSheetTab end -->
+</div>
+<!-- hutaSheet end -->
+
+
+<!-- 기본 설정 -->
+<input type="hidden" name="attr_lie_text" value="거짓말 판정" />
+<input type="hidden" name="attr_traffic_text" value="교통 판정" />
+<input type="hidden" name="attr_social_text" value="사교 판정" />
+<input type="hidden" name="attr_tie_text" value="포박 판정" />
+
+<input type="hidden" name="attr_change_text" value="변화 판정" />
+<input type="hidden" name="attr_information_text" value="정보 판정" />
+<input type="hidden" name="attr_housework_text" value="가사 판정" />
+<input type="hidden" name="attr_defense_text" value="방어 판정" />
+
+<input type="hidden" name="attr_appearance_text" value="외모 판정" />
+<input type="hidden" name="attr_fingerprint_text" value="지문 판정" />
+<input type="hidden" name="attr_rumor_text" value="소문 판정" />
+<input type="hidden" name="attr_temper_text" value="근성 판정" />
+
+<input type="hidden" name="attr_physical_text" value="물리 판정" />
+<input type="hidden" name="attr_science_text" value="과학 판정" />
+<input type="hidden" name="attr_persuasion_text" value="설득 판정" />
+<input type="hidden" name="attr_strength_text" value="체력 판정" />
+
+<input type="hidden" name="attr_scene_text" value="현장 판정" />
+<input type="hidden" name="attr_forensic_text" value="법의학 판정" />
+<input type="hidden" name="attr_trend_text" value="유행 판정" />
+<input type="hidden" name="attr_breakthrough_text" value="돌파 판정" />
+
+<input type="hidden" name="attr_weather_text" value="날씨 판정" />
+<input type="hidden" name="attr_biology_text" value="생물 판정" />
+<input type="hidden" name="attr_business_text" value="비즈니스 판정" />
+<input type="hidden" name="attr_trace_text" value="추적 판정" />
+
+
+<!-- 	<script type="text/worker"> -->
+<!-- 	</script> -->
+
+
+<rolltemplate class="sheet-rolltemplate-huta-roll">
+<table>
+	<tr>
+		<td style="padding: 20px 10px;">{{name}}</td>
+	</tr>
+	<tr>
+		{{#rollTotal() count1 0}} {{#rollTotal() count2 0}}
+		<!-- 보통 -->
+		<td style="padding: 10px 5px;">보통</td>
+	</tr>
+	<tr>
+		<td style="padding: 15px;">{{roll1}} {{roll2}}</td> {{/rollTotal() count2 0}} {{#rollTotal() count2 1}}
+		<!-- 불리 -->
+		<td style="padding: 10px 5px;">불리</td>
+	</tr>
+	<tr>
+		<td style="padding: 15px;">{{roll1}}</td> {{/rollTotal() count2 1}} {{/rollTotal() count1 0}} {{#rollTotal() count1 1}} {{#rollTotal() count2 0}}
+		<!-- 유리 -->
+		<td style="padding: 10px 5px;">유리</td>
+	</tr>
+	<tr>
+		<td style="padding: 15px;">{{roll1}} {{roll2}} {{roll3}}</td> {{/rollTotal() count2 0}} {{#rollTotal() count2 1}}
+		<!-- 보통 -->
+		<td style="padding: 10px 5px;">보통</td>
+	</tr>
+	<tr>
+		<td style="padding: 15px;">{{roll1}} {{roll2}}</td> {{/rollTotal() count2 1}} {{/rollTotal() count1 1}}
+
+	</tr>
+
+</table>
+
+
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-huta-det-habit">
+<table>
+	<!-- roll1 (1d6) roll2 (1d10) habit4 habit5 -->
+	<tr>
+		<td style="padding: 20px 10px;">이상한 버릇 발동!</td>
+	</tr>
+	<tr>
+
+		<!-- 선택 발동 -->
+		{{#rollTotal() roll1 0}} {{#rollTotal() roll3 1}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·지껄이다 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">맹렬하게 감사의 말을 건넨다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">비꼬는 말만 해버린다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">상대의 말을 긍정한 뒤 부정한다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">히죽거리면서 사과한다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">상대의 말은 듣지 않고 자기 말만 한다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">「이렇게 생각할 수는 없나요?」</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">「아니면 무언가 숨기고 있는 것이라도 있으신지?」</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">「희한하네요.」</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">「어느 정도 알겠습니다.」</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">「닥치고 있어.」</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 1}} {{#rollTotal() roll3 2}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·강압적인 조사 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">멋대로 조사 대상의 가방이나 서랍을 연다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">경찰의 조사에 끼어든다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">조사를 위해서 해킹이나 불법 침입을 한다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">허가되지 않은 곳에 들어간다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">경찰의 조사를 엿보거나 엿듣는다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">증거품을 허가 없이 해체한다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">조사 대상을 속여서 정보를 끌어낸다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">멋대로 용의자의 소지품을 만진다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">증거품을 멋대로 들고 다닌다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">멋대로 감식을 시작한다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 2}} {{#rollTotal() roll3 3}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·얼버무리기 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">자신의 신분을 위장해서 용의자에게 이야기를 듣는다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">정보를 숨기면서 이야기를 듣는다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너와 연기를 해서 정보를 끌어내려고 한다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">통행인인 척하면서 용의자의 이야기를 엿듣는다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">우연인 척하면서 증거품을 훔친다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">일부러인 척 얼버무린다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">용의자를 열 받게 하는 연기를 해서 정보를 끌어낸다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">살며시 용의자를 협박한다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">물건을 떨어트렸다고 주장해서 현장이나 증거품을 뒤적인다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">용의자에게 유도 심문을 건다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 3}} {{#rollTotal() roll3 4}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·사건에 몰두 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너의 몸을 사용해서 사건을 재현하려고 한다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">수수께끼를 푸는 게 즐거워서 웃고 만다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">먹고 자는걸 잊고 조사를 하고 있었기에 갑자기 쓰러진다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">깊이 생각을 하고 있어서 아무런 소리도 들리지 않는다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건의 관계도를 가까이 있는 벽이나 바닥에 그리기 시작한다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건에 관한 말을 멈추지 않고 차례차례 내뱉는다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건 해결 이외의 일을 전혀 생각하지 않는다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건의 흐름을 중얼거리기 시작한다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건 현장을 들쑤시며 조사를 한다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">식사 중에도 신경 쓰지 않고 사건의 이야기를 한다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 4}} {{#rollTotal() roll3 5}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·파트너와…… 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너의 신뢰에 응석을 부린다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너를 두고 먼저 가버린다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너에게 사건에 대해 어떻게 생각하는지 질문한다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너에게 자랑한다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너에게 사건에 관한 퀴즈를 낸다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너와 사소한 일로 싸운다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너에게 교사라도 된 마냥 행동한다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너가 따라온다는 전제로 멋대로 움직인다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너에게 친절하고 공손하게 사건을 설명한다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">파트너의 귓가에서 갑자기 말하기 시작한다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 5}} {{#rollTotal() roll3 6}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·무언가를 하고 있다 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">수많은 책을 읽고 있다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">좋아하는 음악을 큰 소리로 틀고 있다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">어떤 수식을 풀고 있다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">좋아하는 음식을 잔뜩 먹고 있다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">계속 컴퓨터나 스마트 폰 등의 화면을 노려보며 조사하고 있다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">작은 수수께끼를 풀고 있다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">체스나 장기 등을 가르치고 있다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">카페에 앉은 채 무언가를 기다리고 있다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">계속 자고 있었지만 갑자기 일어난다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">잠시 동안 아무것도 하지 않는다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 6}} {{#rollTotal() roll3 7}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·갑작스런 번뜩임 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">식사를 하고 있었더니 갑자기 수수께끼가 풀린다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">조수와 수다를 떨고 있었더니 갑자기 수수께끼가 풀린다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">들려오던 대화에서 갑자기 수수께끼가 풀린다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">목욕을 하고 있더니 갑자기 수수께끼가 풀린다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">꿈 속에서 갑자기 수수께끼가 풀린다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">바람이 불어서 날아온 물건으로 수수께끼가 풀린다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">책을 읽고 있었더니 사건의 힌트를 발견한다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">현장을 다시 방문하니 번뜩인다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">자료를 확인하던 중에 번뜩인다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">용의자와 대화를 하던 중에 번뜩인다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 7}} {{#rollTotal() roll3 8}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·희로애락 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 운다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 화낸다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 웃는다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 하이텐션이 된다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 기뻐진다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 외친다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 히죽거리기 시작한다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">갑자기 이 사건의 슬픔에 대해서 이야기한다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">담담하게 일을 진행한다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">로봇처럼 정해진 일만 한다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 8}} {{#rollTotal() roll3 9}}
+		<td style="padding: 10px 5px;">「 이상한 버릇·기상천외 표 」</td> {{#rollTotal() roll2 1}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">하지 말라는 말을 듣던 일을 한다.</td> {{/rollTotal() roll2 1}} {{#rollTotal() roll2 2}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">잠시 동안 어딘가에 가있었지만 돌아왔다.</td> {{/rollTotal() roll2 2}} {{#rollTotal() roll2 3}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">예상치도 못한 곳(땅 속이나 공중 등)에서 등장한다.</td> {{/rollTotal() roll2 3}} {{#rollTotal() roll2 4}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">무언가를 떠올리고 갑자기 달려나간다.</td> {{/rollTotal() roll2 4}} {{#rollTotal() roll2 5}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">한심한 자신을 나무란다.</td> {{/rollTotal() roll2 5}} {{#rollTotal() roll2 6}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">모르는 사이에 사건의 수수께끼를 하나 풀고 있다.</td> {{/rollTotal() roll2 6}} {{#rollTotal() roll2 7}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건에 대해서 무언가를 알아낸 것 같지만 아무에게도 말하지 않는다.</td> {{/rollTotal() roll2 7}} {{#rollTotal() roll2 8}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">편지를 두거나 메일로 보고를 하지만 모습이 보이지 않는다.</td> {{/rollTotal() roll2 8}} {{#rollTotal() roll2 9}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">시계를 보더니 갑자기 움직인다.</td> {{/rollTotal() roll2 9}} {{#rollTotal() roll2 10}}
+	</tr>
+	<tr>
+		<td style="padding: 15px;">사건과 관계 없어 보이는 신문의 기사를 읽고 있다.</td> {{/rollTotal() roll2 10}} {{/rollTotal() roll3 9}} {{/rollTotal() roll1 0}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 1}}
+		<td style="padding: 10px 5px;">{{habit1}}</td> {{/rollTotal() roll1 1}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 2}}
+		<td style="padding: 10px 5px;">{{habit2}}</td> {{/rollTotal() roll1 2}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 3}}
+		<td style="padding: 10px 5px;">{{habit3}}</td> {{/rollTotal() roll1 3}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 4}}
+		<td style="padding: 10px 5px;">{{habit4}}</td> {{/rollTotal() roll1 4}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 5}}
+		<td style="padding: 10px 5px;">{{habit5}}</td> {{/rollTotal() roll1 5}}
+
+		<!-- ------------------- -->
+
+		{{#rollTotal() roll1 6}}
+		<td style="padding: 10px 5px;">랜덤</td>
+	</tr>
+	<tr>
+		{{#rollTotal() roll4 1}}
+		<td style="padding: 15px;">「이상한 버릇·지껄이다 표」</td> {{/rollTotal() roll4 1}} {{#rollTotal() roll4 2}}
+		<td style="padding: 15px;">「이상한 버릇·강압적인 조사 표」</td> {{/rollTotal() roll4 2}} {{#rollTotal() roll4 3}}
+		<td style="padding: 15px;">「이상한 버릇·얼버무리기 표」</td> {{/rollTotal() roll4 3}} {{#rollTotal() roll4 4}}
+		<td style="padding: 15px;">「이상한 버릇·사건에 몰두 표」</td> {{/rollTotal() roll4 4}} {{#rollTotal() roll4 5}}
+		<td style="padding: 15px;">「이상한 버릇·파트너와…… 표」</td> {{/rollTotal() roll4 5}} {{#rollTotal() roll4 6}}
+		<td style="padding: 15px;">「이상한 버릇·무언가를 하고 있다 표」</td> {{/rollTotal() roll4 6}} {{#rollTotal() roll4 7}}
+		<td style="padding: 15px;">「이상한 버릇·갑작스런 번뜩임 표」</td> {{/rollTotal() roll4 7}} {{#rollTotal() roll4 8}}
+		<td style="padding: 15px;">「이상한 버릇·희로애락 표」</td> {{/rollTotal() roll4 8}} {{#rollTotal() roll4 9}}
+		<td style="padding: 15px;">「이상한 버릇·기상천외 표」</td> {{/rollTotal() roll4 9}} {{/rollTotal() roll1 6}}
+	</tr>
+</table>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-huta-action">
+<table>
+	<tr>
+		<td style="padding: 20px 10px;">{{name}}</td>
+	</tr>
+	<tr>
+		<td style="padding: 10px 5px;">타입 : {{sel}} | 비용 : {{cost}}</td>
+	</tr>
+	<tr>
+		<td style="padding: 20px">{{description}}</td>
+	</tr>
+</table>
+</rolltemplate>
+
+<!-- 끝 -->
+   

@@ -1,0 +1,443 @@
+
+/*
+  최초 업로드 2020. 05. 30. / 최종 수정 2020. 05. 30.
+  https://github.com/seeoya/lalllaby
+  둘이서수사(후타리소우사, 후타소사) Roll20 커스텀 시트 css 백업
+  
+  개인이 사용하기위해 제작한 시트이며, 문제 발생 시 수정 및 삭제됩니다.
+  심심하면 수정합니다. 문의/오류 신고/수정 제안은 @TQ_Romantic의 DM으로 부탁드립니다.
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	/* border: 2px solid #333; */
+	/* box-sizing: border-box; */
+}
+
+.sheet-skills-detective td, .sheet-actions-detective td, .sheet-skills-assistant td, .sheet-actions-assistant td {
+	height: 30px;
+	background: white;
+	border-bottom: 1px solid #eee;
+}
+
+.sheet-habit-detective td:first-child, .sheet-profile-detective td:first-child, .sheet-profile-detective td:nth-child(3), .sheet-profile-assistant td:first-child, .sheet-profile-assistant td:nth-child(3) {
+	background: #bbb;
+	width: 80px;
+	min-width: max-content;
+	border: none;
+}
+
+.sheet-actions-detective-first tr:first-child td, .sheet-actions-assistant-first tr:first-child td, .sheet-habit-detective tr:first-child td, .sheet-skills-detective tr:first-child td, .sheet-profile-detective tr:first-child td, .sheet-profile-assistant tr:first-child td, .sheet-relax-assistant tr:nth-child(2n-1), .sheet-skills-assistant tr:first-child td, .sheet-guests-assistant-first tr:first-child td {
+	background: #333;
+	color: white;
+	height: 40px;
+	border: none;
+}
+
+.sheet-actions-detective-first tr:nth-child(2) td, .sheet-actions-assistant-first tr:nth-child(2) td, .sheet-skills-detective tr:nth-child(3) td, .sheet-skills-assistant tr:nth-child(3) td, .sheet-guests-assistant-first tr:nth-child(2) td {
+	background: #bbb;
+	height: 35px;
+	border: none;
+}
+
+.sheet-skills-detective tr:nth-child(2) td, .sheet-skills-assistant tr:nth-child(2) td, .sheet-habit-detective tr:last-child td:first-child {
+	background: #777;
+	height: 35px;
+	border: none;
+	color: white;
+	height: unset;
+}
+
+.sheet-habit-detective tr:last-child td:first-child button {
+	color: white;
+	text-shadow: none;
+}
+
+.sheet-skills-detective td:nth-child(2n), .sheet-skills-assistant td:nth-child(2n) {
+	width: 15%;
+	border-right: 1px dashed #bbb;
+}
+
+.sheet-skills-detective td:nth-child(2n-1), .sheet-skills-assistant td:nth-child(2n-1) {
+	width: 5%;
+}
+
+.sheet-skills-detective td:last-child, .sheet-skills-assistant td:last-child {
+	border-right: none;
+}
+
+.sheet-actions-detective td:first-child, .sheet-actions-assistant td:first-child {
+	width: 6%;
+}
+
+.sheet-actions-detective td:nth-child(3), .sheet-actions-detective td:nth-child(4), .sheet-actions-assistant td:nth-child(3), .sheet-actions-assistant td:nth-child(4) {
+	width: 8%;
+}
+
+.sheet-actions-detective td:nth-child(2), .sheet-actions-assistant td:nth-child(2) {
+	width: 25%;
+}
+
+.sheet-guests-assistant td:first-child {
+	width: 20%;
+}
+
+.sheet-guests-assistant td:nth-child(2) {
+	width: 10%;
+}
+
+.sheet-guests-assistant td:nth-child(3) {
+	width: 30%;
+}
+
+.sheet-guests-assistant td:nth-child(4) {
+	width: 40%;
+}
+
+.sheet-relax-assistant tr:nth-child(2) {
+	height: 129px;
+	background: white;
+}
+
+.sheet-relax-assistant tr:nth-child(4) {
+	height: 80px;
+	background: white;
+}
+
+input.sheet-detectiveTab, input.sheet-assistantTab {
+	width: 120px;
+	height: 40px;
+	-webkit-appearance: none;
+	border: none;
+	background: #333;
+	border-radius: 20px;
+}
+
+input.sheet-detectiveTab:hover, input.sheet-assistantTab:hover, .sheet-habit-detective tr:last-child td:first-child:hover {
+	background: orange;
+}
+
+input.sheet-detectiveTab:checked, input.sheet-assistantTab:checked {
+	background: orange;
+}
+
+.sheet-detTab {
+	position: relative;
+	left: -77px;
+	color: white;
+}
+
+.sheet-asiTab {
+	position: relative;
+	left: 77px;
+	color: white;
+}
+
+.sheet-hutaSheet {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px 0;
+	background: #eee;
+	text-align: center;
+	vertical-align: middle;
+	min-width: 350px;
+	font-size: 100%;
+}
+
+.sheet-hutaSheet table {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.sheet-hutaSheet td {
+	min-width: max-content;
+	vertical-align: middle;
+}
+
+.sheet-rollText {
+	color: white;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.sheet-rollText:before {
+	margin-right: 5px;
+}
+
+.sheet-hutaSheet input[type="text"], .sheet-hutaSheet select, .sheet-hutaSheet option, .sheet-hutaSheet textarea {
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	text-align-last: center;
+	vertical-align: middle;
+	padding: 0;
+	border: 0.7px solid #eee;
+	margin: 0;
+}
+
+.sheet-hutaSheet textarea {
+	resize: none;
+}
+
+.sheet-hutaSheet input[type="text"]:hover, .sheet-hutaSheet select:hover, .sheet-hutaSheet option:hover, .sheet-hutaSheet textarea:hover {
+	border-bottom: 2px solid #ddd;
+	background: #eee;
+}
+
+.sheet-skills-detective tr:nth-child(2) button[type=roll], .sheet-skills-assistant tr:nth-child(2) button[type=roll] {
+	width: 20%;
+	margin: auto;
+}
+
+.sheet-skills-detective tr td button[type=roll], .sheet-skills-assistant tr td button[type=roll] {
+	width: 80%;
+}
+
+button[type=roll] {
+	font-size: unset !important;
+	border: none;
+	-webkit-appearance: none;
+	box-shadow: none;
+	text-shadow: none;
+	background: none;
+}
+
+button[type=roll]:hover {
+	background: orange;
+	color: white;
+	text-shadow: none;
+	box-shadow: none;
+}
+
+div.sheet-huta-detective, div.sheet-huta-assistant {
+	display: none;
+}
+
+input.sheet-detectiveTab:checked ~ div.sheet-huta-detective, input.sheet-assistantTab:checked ~ div.sheet-huta-assistant {
+	display: block;
+}
+
+.sheet-skillsButton:before {
+	content: "" !important;
+}
+
+.sheet-skillsButton {
+	cursor: pointer;
+	border: none;
+	background: none;
+	-webkit-appearance: none;
+}
+
+.sheet-huta_d6_roll {
+	margin: 20px 0;
+}
+
+.sheet-huta_d6_roll button {
+	color: white;
+	background: #333;
+}
+
+/* 탐정 */
+.sheet-base-detective {
+	display: flex;
+	width: 95%;
+	margin: 40px auto;
+}
+
+.sheet-profile-detective {
+	width: 45%;
+	margin: auto;
+	margin-left: 0;
+}
+
+.sheet-profile-detective {
+	
+}
+
+.sheet-habit-detective {
+	width: 52%;
+	margin: auto;
+	margin-right: 0;
+}
+
+.detHabInput1, .detHabInput2, .detHabInput3, .detHabInput4, .detHabInput5, .detHabInput6 {
+	display: none;
+}
+
+.sheet-skills-detective {
+	width: 95%;
+	margin: 40px auto;
+}
+
+.sheet-skills-detective select {
+	width: max-content;
+}
+
+.detSel2Class {
+	background: #eee;
+}
+
+.sheet-actions-detective {
+	width: 95%;
+	margin: 40px auto;
+}
+
+/* 조수 */
+.sheet-base-assistant {
+	display: flex;
+	width: 95%;
+	margin: 40px auto;
+}
+
+.sheet-profile-assistant {
+	width: 45%;
+	margin: auto;
+	margin-left: 0;
+}
+
+.sheet-relax-assistant {
+	width: 52%;
+	margin: auto;
+	margin-right: 0;
+}
+
+.sheet-relax-assistant input[type="checkbox"]:checked {
+	background: #777;
+}
+
+.sheet-relax-assistant input[type="checkbox"] {
+	-webkit-appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 15px;
+	border: 1px solid #555;
+	background: none;
+	cursor: pointer;
+	margin: 10px 3px;
+}
+
+.sheet-relax-assistant input[type="checkbox"]:hover {
+	background: orange;
+}
+
+.sheet-relaxAsiCheck {
+	display: none
+}
+
+.sheet-relaxAsiCheckLabel {
+	display: block;
+	color: red;
+	background: pink;
+}
+
+.sheet-skills-assistant {
+	width: 95%;
+	margin: 40px auto;
+}
+
+.sheet-skills-assistant select {
+	width: max-content;
+}
+
+.sheet-actions-assistant {
+	width: 95%;
+	margin: 40px auto;
+}
+
+.sheet-guests-assistant {
+	width: 95%;
+	margin: 40px auto;
+}
+
+.btn repcontrol_add {
+	float: right;
+}
+
+.btn.repcontrol_edit, .btn.repcontrol_add {
+	float: right;
+	background: #333;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	color: white;
+	border-radius: 20px;
+	margin: 5px;
+	width: 50px;
+	height: 25px;
+	margin-bottom: 20px;
+}
+
+.btn.repcontrol_edit:hover, .btn.repcontrol_add:hover {
+	background: orange;
+}
+
+.btn.repcontrol_move {
+	display: none;
+}
+
+/* 템플릿 */
+.sheet-rolltemplate-huta-det-habit table, .sheet-rolltemplate-huta-roll table, .sheet-rolltemplate-huta-action table {
+	width: 90%;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
+	border: 3px solid black;
+}
+
+.sheet-rolltemplate-huta-det-habit tr:first-child, .sheet-rolltemplate-huta-roll tr:first-child, .sheet-rolltemplate-huta-action tr:first-child {
+	background: black;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.sheet-rolltemplate-huta-det-habit tr:nth-child(2), .sheet-rolltemplate-huta-roll tr:nth-child(2), .sheet-rolltemplate-huta-action tr:nth-child(2) {
+	background: #eee;
+	padding: 10px 0px;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	padding: 10px;
+}
+
+.sheet-rolltemplate-huta-det-habit tr:nth-child(3), .sheet-rolltemplate-huta-roll tr:nth-child(3), .sheet-rolltemplate-huta-action tr:nth-child(3) {
+	background: white;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 14px;
+	padding: 20px;
+}
+
+/* 끝 */

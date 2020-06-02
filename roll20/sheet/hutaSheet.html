@@ -1,6 +1,6 @@
-   
+
 <!--
-  최초 업로드 2020. 05. 30. / 최종 수정 2020. 05. 30.
+  최초 업로드 2020. 05. 30. / 최종 수정 2020. 06. 02.
   https://github.com/seeoya/lalllaby
   둘이서 수사(후타리소우사, 후타소사) Roll20 커스텀 시트 html 백업
   
@@ -24,11 +24,11 @@
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_det_name" /></td>
 					</tr>
 					<tr>
 						<td>클래스</td>
-						<td colspan="3"><select name="" id="" class="detSel">
+						<td colspan="3"><select name="attr_det_class" id="" class="detSel">
 								<option value="" selected="selected">선택</option>
 								<option value="" class="detSelClass1">운명의 혈통</option>
 								<option value="" class="detSelClass2">천성의 재능</option>
@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<td>배경</td>
-						<td colspan="3"><select name="" id="" class="detSel2">
+						<td colspan="3"><select name="attr_det_back" id="" class="detSel2">
 								<option value="" selected="selected">선택</option>
 								<option value="" class="detSel2Class" disabled="disabled">- 운명의 혈통 -</option>
 								<option value="" class="detClass1">명탐정의 선조(실재)</option>
@@ -76,23 +76,23 @@
 					</tr>
 					<tr>
 						<td>연령</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_det_age" /></td>
 						<td>신장</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_det_height" /></td>
 					</tr>
 					<tr>
 						<td>직업</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_det_job" /></td>
 					</tr>
 					<tr>
 						<td>패션 특징</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_det_fashion" /></td>
 					</tr>
 					<tr>
 						<td>좋아하는 것</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_det_like" /></td>
 						<td>싫어하는 것</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_det_dlike" /></td>
 					</tr>
 				</table>
 			</div>
@@ -308,11 +308,11 @@
 					</tr>
 					<tr>
 						<td>이름</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_asi_name" /></td>
 					</tr>
 					<tr>
 						<td>클래스</td>
-						<td colspan="3"><select name="" id="">
+						<td colspan="3"><select name="attr_asi_class" id="">
 								<option value="">선택</option>
 								<option value="">정의로운 사람</option>
 								<option value="">정열적인 사람</option>
@@ -321,7 +321,7 @@
 					</tr>
 					<tr>
 						<td>배경</td>
-						<td colspan="3"><select name="" id="">
+						<td colspan="3"><select name="attr_asi_back" id="">
 								<option value="">선택</option>
 								<option value="">-정의로운 사람-</option>
 								<option value="">친절한 사람</option>
@@ -348,23 +348,23 @@
 					</tr>
 					<tr>
 						<td>연령</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_asi_age" /></td>
 						<td>신장</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_asi_height" /></td>
 					</tr>
 					<tr>
 						<td>직업</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_asi_job" /></td>
 					</tr>
 					<tr>
 						<td>패션 특징</td>
-						<td colspan="3"><input type="text" /></td>
+						<td colspan="3"><input type="text" name="attr_asi_fashion" /></td>
 					</tr>
 					<tr>
 						<td>좋아하는 것</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_asi_like" /></td>
 						<td>싫어하는 것</td>
-						<td><input type="text" /></td>
+						<td><input type="text" name="attr_asi_dlike" /></td>
 					</tr>
 				</table>
 			</div>
@@ -383,8 +383,6 @@
 					<tr>
 						<td>마음고생</td>
 					</tr>
-
-
 					<tr>
 						<td><input type="checkbox" name="attr_nRelaxAsi1" /> <input type="checkbox" name="attr_nRelaxAsi2" /> <input type="checkbox" name="attr_nRelaxAsi3" /></td>
 					</tr>
@@ -1006,4 +1004,3 @@
 </rolltemplate>
 
 <!-- 끝 -->
-   

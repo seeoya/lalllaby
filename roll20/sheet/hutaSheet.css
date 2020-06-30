@@ -1,6 +1,6 @@
- 
+
 /*
-  최초 업로드 2020. 05. 30. / 최종 수정 2020. 05. 30.
+  최초 업로드 2020. 05. 30. / 최종 수정 2020. 06. 30.
   https://github.com/seeoya/lalllaby
   둘이서 수사(후타리소우사, 후타소사) Roll20 커스텀 시트 css 백업
   
@@ -227,7 +227,7 @@ input.sheet-detectiveTab:checked, input.sheet-assistantTab:checked {
 	width: 80%;
 }
 
-.sheet-actions-assistant button[type=roll] {
+.sheet-actions-assistant button[type=roll], .sheet-actions-detective button[type=roll] {
 	width: 75%;
 	height: 90%;
 }
@@ -446,4 +446,3 @@ input.sheet-detectiveTab:checked ~ div.sheet-huta-detective, input.sheet-assista
 }
 
 /* 끝 */
- 

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<style>
+.select-wrap {position: relative;}
+.select-button, .comm-select li button {margin: 10px 0 0; padding: 15px 20px; width: 100%; height: 45px; border: 1px solid #e1e1e1; border-radius: 4px; box-sizing: border-box; outline: none; line-height: 1rem; cursor: pointer;}
+.select-button {text-align: left; background: #fff url(./images/select_icon.svg) no-repeat calc(100% - 20px) !important; background-size: 15px !important;}
+.select-button.open {background: #fff url(./images/select_icon_reverse.svg) no-repeat calc(100% - 20px) !important; background-size: 15px !important; border-color: #860cff; border-bottom: none; border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;}
+.select-button:hover {background: #eaeaea url(./images/select_icon.svg) no-repeat calc(100% - 20px) !important; background-size: 15px !important;}
+.select-button.open:hover{background: #eaeaea url(./images/select_icon_reverse.svg) no-repeat calc(100% - 20px) !important; background-size: 15px !important;}
+.select-button:focus {border-color: #860cff;}
+.comm-select {display: none; position: absolute; margin: 0; padding: 0; width: 100%; border: 1px solid #860cff; border-top: 1px dotted #860cff;  border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-sizing: border-box; z-index: 10; list-style: none;}
+.comm-select li {position: relative; margin: 0; padding: 0; width: 100%; z-index: 1; list-style: none;}
+.comm-select .select-li-button {margin: 0; padding: 15px 20px; width: 100%; background: #fff; border: none; border-bottom: 1px solid #e1e1e1; border-radius: 0; text-align: left;}
+.comm-select .select-li-button.active, .comm-select .select-li-button:focus {background: #eaeaea; }
+.comm-select li:last-child .select-li-button {border-bottom: none;  border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;}
+</style>
+  
+<div class="select-wrap">
+  <input type="hidden" name="name" id="id" value="">
+  <button type="button" data-number="0" class="select-button">선택하세요</button>
+  <ul class="comm-select">
+    <li><button type="button" value="value" class="select-li-button">선택하세요</button></li>
+    <li><button type="button" value="value" class="select-li-button">12322</button></li>
+    <li><button type="button" value="value" class="select-li-button">3414</button></li>
+    <li><button type="button" value="value" class="select-li-button">12343124</button></li>
+    <li><button type="button" value="value" class="select-li-button">bfaf</button></li>
+    <li><button type="button" value="value" class="select-li-button">12111</button></li>
+  </ul>
+</div>
+  
+<script>
+    $(function() {
+    // 사용 형식
+    //<div class="select-wrap">
+        //<input type="hidden" name="name" id="id" value="">
+        //<button type="button" data-number="0" class="select-button">선택하세요</button>
+        //<ul class="comm-select">
+            //<li><button type="button" value="value" class="select-li-button">선택하세요</button></li>
+            //<li><button type="button" value="value" class="select-li-button">항목1</button></li>
+            //<li><button type="button" value="value" class="select-li-button">항목2</button></li>
+            //<li><button type="button" value="value" class="select-li-button">항목3</button></li>
+        //</ul>
+    //</div>
+
+    // 휠 클릭
+    $('.select-li-button').mousedown(function(e){
+        if(e.which == 2) {
+            e.target.click();
+            return false;
+        }
+    });
+
+    // 외부 클릭 시 닫기
+    $(document).on("click", function(e) {
+        if(e.target.className.indexOf("select-button") == -1) {
+            $(".select-button").removeClass("open");
+
+            $(".comm-select").hide();
+        }
+    });
+
+    // 키보드 입력
+    $(document).keydown(function(e) {
+        let focusItem = $(":focus"),
+        focusItemClass = focusItem.attr("class"),
+        activeButtonCount = $(".select-li-button.active").length;
+
+        if(focusItemClass == "select-button" || focusItemClass == "select-li-button" || activeButtonCount > 0) {
+            let target = $(e.target),
+            selectButton = target.parents(".select-wrap").find(".select-button"),
+            selectNum = parseInt(selectButton.attr("data-number")),
+            selectText = selectButton.text(),
+            targetUl = target.parents(".select-wrap").find("ul"),
+            targetLi = target.parents(".select-wrap").find("li"),
+            tmpNum = null,
+
+            alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            typeChar = null,
+            firstCharArray = new Array;
+
+            // active 상태인 버튼이 있다면 우선 선택
+            if(activeButtonCount > 0) {
+                tmpNum = selectNum;
+                selectNum = parseInt(targetUl.find($(".select-li-button")).index($(".active")));
+            }; 
+            
+            switch (e.keyCode) {
+                // 기능 키
+                case 37: // 좌
+                    if(selectButton.hasClass("open")) {
+                        e.preventDefault();
+                        break;
+                    }
+                case 38: // 상
+                    selectNum -= 1;
+                    e.preventDefault();
+
+                    break;
+                    
+                case 39: // 우
+                    if(selectButton.hasClass("open")) {
+                        e.preventDefault();
+                        break;
+                    }
+                case 40: // 하
+                    selectNum += 1;
+                    e.preventDefault();
+
+                    break;
+
+                case 13: // 엔터
+                    targetUl.toggle();
+                    selectButton.toggleClass("open");
+                    e.preventDefault();
+
+                    break;
+                    
+                case 9: // 탭
+                    if(selectButton.hasClass("open")) {
+                        targetUl.hide();
+                        selectButton.removeClass("open");
+                        e.preventDefault();
+                    };
+
+                    break;
+                    
+                case 27: // esc
+                    targetUl.hide();
+                    selectButton.removeClass("open");
+
+                    break;
+
+                case 32: // 스페이스
+                    if(selectButton.hasClass("open")) {
+                        if(tmpNum != null) {
+                            selectNum = tmpNum;
+                        };
+
+                        e.preventDefault();
+                    };
+                    
+                    break;
+                
+                case 48:case 49:case 50:case 51:case 52:
+                case 53:case 54:case 55:case 56:case 57: // 숫자 0~9
+                case 96:case 97:case 98:case 99:case 100:
+                case 101:case 102:case 103:case 104:case 105: // 숫자 0~9 (num)
+                    if (typeChar == null) {
+                        typeChar = parseInt(e.keyCode - 96);
+                        if (typeChar < 0) { typeChar = e.keyCode - 48; }
+
+                        typeChar = numbers[typeChar];  
+                    };
+
+                case 65:case 66:case 67:case 68:case 69:
+                case 70:case 71:case 72:case 73:case 74:
+                case 75:case 76:case 77:case 78:case 79:
+                case 80:case 81:case 82:case 83:case 84:
+                case 85:case 86:case 87:case 88:case 89:case 90: // a-z                
+                    if(typeChar == null) {
+                        typeChar = parseInt(e.keyCode - 65);
+
+                        typeChar = alphabets[typeChar];
+                    };
+
+                    // 초성 추출
+                    for (let i = 0; i < targetLi.length; i++) {
+                        firstCharArray.push(targetLi.eq(i).text().substr(0 , 1).toLowerCase());
+                    };
+
+                    let count = new Array;
+                    for (let i = 0; i < firstCharArray.length; i++) {
+                        if(firstCharArray[i] == typeChar ) {
+                            count.push(i);
+                        };
+                    };
+
+                    if (count[count.length-1] <= selectNum) {
+                        selectNum = count[0];
+                    } else {
+                        for (let i = 0; i < count.length; i++) {
+                            if (selectNum < count[i]) {
+                                selectNum = count[i];
+                                break;
+                            };
+                        };
+                    };
+
+                break;
+
+                default:
+                    break;
+            }
+
+            if (selectNum < 0) {
+                selectNum = 0;
+            } else if (selectNum > targetLi.length - 1) {
+                selectNum = targetLi.length - 1;
+            };
+            
+            selectText = targetLi.eq(selectNum).text();
+
+            selectChange(selectButton, selectNum, selectText);
+
+            targetLi.eq(selectNum).find(".select-li-button").focus();
+        };
+    });
+
+    // 셀렉트박스 클릭
+    $(".select-button").on("click", function() {
+        let $this = $(this),
+        selectNumber = parseInt($this.attr("data-number")),
+        selectUl = $this.next("ul"),
+        selectLi = selectUl.children("li"),
+        toggleFlag = "open"
+        openFlag = "block";
+        
+        if($this.hasClass("open")) {
+            toggleFlag = "";
+            openFlag = "none"
+        };
+
+        $(".comm-select").hide();
+        $(".select-button").removeClass("open");
+
+        $this.addClass(toggleFlag);
+        selectUl.css("display", openFlag);
+        selectLi.eq(selectNumber).children("button").addClass("active");
+    });
+
+    // 옵션 클릭
+    $(".select-li-button").on({
+        click: function() {
+            let $this = $(this),
+            selectButton = $this.parents("ul").prev(".select-button"),
+            selectNumber = $this.parents("li").index(),
+            selectText =  $this.text();
+            
+            $(".comm-select").hide();
+            selectButton.removeClass("open");
+
+            selectChange(selectButton, selectNumber, selectText);
+            $(".select-li-button").removeClass("active");
+        }, mouseover: function() {
+            $(".select-li-button").removeClass("active");
+            $(this).addClass("active");            
+        }
+    });
+});
+
+function selectChange(button, number, text) {
+    let hidden = button.prev("input");
+
+    $(".select-li-button").removeClass("active");
+
+    hidden.val(button.next().find(".select-li-button").eq(number).val());
+
+    button.attr("data-number", number);
+    button.text(text);
+    button.focus();
+};
+
+</script>
+</div>

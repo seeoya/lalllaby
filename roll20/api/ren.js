@@ -2,7 +2,7 @@
 // https://github.com/seeoya/lalllaby
 // Roll20 attr 증가, 감소 api
 
-// ex. !ren 10 (+10), !ren -10 (-10), !ren d10(+1d10), !ren -d30(-1d30)
+// ex. !ren 10 (+10), !ren -10 (-10), !ren d10(+1d10), !ren -4d30(-4d30)
 
 on("chat:message", msg => {
     if (msg.type === "api") {

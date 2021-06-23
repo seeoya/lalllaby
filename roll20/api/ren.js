@@ -2,7 +2,7 @@
 // https://github.com/seeoya/lalllaby
 // Roll20 attr 증가, 감소 api
 
-// ex. !ren 10 (+10), !ren -10 (-10), !ren 1d10(+1d10), !ren -4d30(-4d30)
+// ex. !ren 10 (+10), !ren -10 (-10), !ren d10(+1d10), !ren -d30(-1d30)
 
 on("chat:message", msg => {
     if (msg.type === "api") {
@@ -32,8 +32,13 @@ on("chat:message", msg => {
 
                 if (character) {
                     if (dFlag > -1) {
-                        cont1 = parseInt(cont.split("d")[0]);
-                        cont2 = parseInt(cont.split("d")[1]);
+                        if(!cont.split("d")[0]) {
+                            cont1 = 1;
+                            cont2 = parseInt(cont.split("d")[1]);
+                        } else {
+                            cont1 = parseInt(cont.split("d")[0]);
+                            cont2 = parseInt(cont.split("d")[1]);
+                        }
 
                         for (let idx = 0; idx < cont1; idx++) {
                             rand = Math.floor(Math.random() * (cont2 - 1) + 1);

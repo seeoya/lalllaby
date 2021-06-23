@@ -13,7 +13,7 @@ on('chat:message', msg => {
                     num = parseInt(content);
                     
                 if(character && num) {
-                    // 사용할 attr 이름
+                    // 사용할 attr 이름. 예시는 'ren'
                     attr = findObjs({type:'attribute', characterid: character.id, name: 'ren'})[0],
                     attrC = parseInt(attr.get('current')),
                     attrN = attrC + num;

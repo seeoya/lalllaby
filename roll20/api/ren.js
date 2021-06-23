@@ -55,16 +55,18 @@ on("chat:message", msg => {
                     
                     attr = findObjs({ type: "attribute", characterid: character.id, name: attrName })[0];
                     attrC = parseInt(attr.get("current"));
-                    if(mFlag) {
-                        attrN = attrC - num;
-                    } else {
-                        attrN = attrC + num;
+                    if(mFlag) {attrN = attrC - num;}
+                    else {attrN = attrC + num;}
+                    
+                    if(!attrN) {
+                        sendChat("error", "/w " + msg.who + "형식오류. 다시 시도해주세요!");
+                        return false;
                     }
 
                     attr.set("current", attrN);
 
                     // 채팅창 기록이 필요하다면 하단 주석(//)을 해제하고 사용.
-                    // sendChat(msg.who, attrC + sig + num + attrText + " → " + attrN);
+                    sendChat(msg.who, attrC + sig + num + attrText + " → " + attrN);
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 다시 시도해주세요!");
                 }

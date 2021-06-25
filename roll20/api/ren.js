@@ -63,8 +63,10 @@ on("chat:message", msg => {
                     // 채팅창 기록이 필요하다면 하단 주석(//)을 해제하고 사용.
                     // 채팅창에 올리기
                     // sendChat(msg.who, attrC + sig + num + attrText + " → " + attrN);
-                    // GM에게 귓해서 확인하기
+                    // GM에게 귓하기
                     // sendChat(msg.who, "/w gm " + attrC + sig + num + attrText + " → " + attrN);
+                    // 나에게 귓하기
+                    // sendChat(msg.who, "/w " + msg.who + " " + attrC + sig + num + attrText + " → " + attrN);
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 저널을 확인해주세요!");
                 }

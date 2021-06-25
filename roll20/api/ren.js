@@ -13,10 +13,11 @@ on("chat:message", msg => {
             try {
                 let character = findObjs({ type: "character", name: msg.who })[0],
                     cont = msg.content.replace("!ren ", ""),
-                    mFlag = false, dFlag = cont.indexOf("d"),
+                    mFlag = false, dFlag = cont.indexOf("d"), aFlag = cont.indexOf("a"),
                     sig = " + ", attrText = "",
                     cont1 = 0, cont2 = 0, rand = 0, num = 0;
-
+                    cont = cont.replace("a ", "");
+                
                     if(cont.indexOf("-") > -1) {
                         mFlag = true;
                         sig = " - ";
@@ -67,6 +68,10 @@ on("chat:message", msg => {
                     // sendChat(msg.who, "/w gm " + attrC + sig + num + attrText + " → " + attrN);
                     // 나에게 귓하기
                     // sendChat(msg.who, "/w " + msg.who + " " + attrC + sig + num + attrText + " → " + attrN);
+                    
+                    if(aFlag > -1) {
+                        sendChat(msg.who, "/em +" + num);
+                    }
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 저널을 확인해주세요!");
                 }

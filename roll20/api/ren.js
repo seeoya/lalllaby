@@ -54,7 +54,7 @@ on("chat:message", msg => {
                     else {attrN = attrC + num;}
                     
                     if(!attrN) {
-                        sendChat("error", "/w " + msg.who + "형식오류. 다시 시도해주세요!");
+                        sendChat("error", "/w " + msg.who + "형식오류. attr을 확인해주세요!");
                         return false;
                     }
 
@@ -66,7 +66,7 @@ on("chat:message", msg => {
                     // GM에게 귓해서 확인하기
                     // sendChat(msg.who, "/w gm " + attrC + sig + num + attrText + " → " + attrN);
                 } else {
-                    sendChat("error", "/w " + msg.who + "형식오류. 다시 시도해주세요!");
+                    sendChat("error", "/w " + msg.who + "형식오류. 저널을 확인해주세요!");
                 }
             } catch (err) {
                 sendChat("error", "/w gm " + err);

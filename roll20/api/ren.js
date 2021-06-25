@@ -13,14 +13,9 @@ on("chat:message", msg => {
             try {
                 let character = findObjs({ type: "character", name: msg.who })[0],
                     cont = msg.content.replace("!ren ", ""),
-                    mFlag = false,
-                    dFlag = cont.indexOf("d"),
-                    sig = " + ",
-                    cont1 = 0,
-                    cont2 = 0,
-                    rand = 0,
-                    num = 0,
-                    attrText = "";
+                    mFlag = false, dFlag = cont.indexOf("d"),
+                    sig = " + ", attrText = "",
+                    cont1 = 0, cont2 = 0, rand = 0, num = 0;
 
                     if(cont.indexOf("-") > -1) {
                         mFlag = true;
@@ -66,7 +61,10 @@ on("chat:message", msg => {
                     attr.set("current", attrN);
 
                     // 채팅창 기록이 필요하다면 하단 주석(//)을 해제하고 사용.
-                    sendChat(msg.who, attrC + sig + num + attrText + " → " + attrN);
+                    // 채팅창에 올리기
+                    // sendChat(msg.who, attrC + sig + num + attrText + " → " + attrN);
+                    // GM에게 귓해서 확인하기
+                    // sendChat(msg.who, "/w gm " + attrC + sig + num + attrText + " → " + attrN);
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 다시 시도해주세요!");
                 }

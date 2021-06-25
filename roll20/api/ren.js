@@ -70,7 +70,7 @@ on("chat:message", msg => {
                     // sendChat(msg.who, "/w " + msg.who + " " + attrC + sig + num + attrText + " → " + attrN);
                     
                     if(aFlag > -1) {
-                        sendChat(msg.who, "/em +" + num);
+                        sendChat(msg.who, "/em + " + num);
                     }
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 저널을 확인해주세요!");

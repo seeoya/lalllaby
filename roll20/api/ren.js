@@ -13,10 +13,11 @@ on("chat:message", msg => {
             try {
                 let character = findObjs({ type: "character", name: msg.who })[0],
                     cont = msg.content.replace("!ren ", ""),
-                    mFlag = false, dFlag = cont.indexOf("d"), aFlag = cont.indexOf("a"),
+                    mFlag = false, dFlag = cont.indexOf("d"), aFlag = cont.indexOf("a"), rFlag = cont.indexOf("r"),
                     sig = " + ", attrText = "",
                     cont1 = 0, cont2 = 0, rand = 0, num = 0;
                     cont = cont.replace("a ", "");
+                    cont = cont.replace("r ", "");
                 
                     if(cont.indexOf("-") > -1) {
                         mFlag = true;
@@ -71,6 +72,9 @@ on("chat:message", msg => {
                     
                     if(aFlag > -1) {
                         sendChat(msg.who, "/em + " + num);
+                    }
+                    if(rFlag > -1) {
+                        sendChat(msg.who, "&{template:default}{{name=리저렉트}}{{HP, 침식률=+" + num + "}}");
                     }
                 } else {
                     sendChat("error", "/w " + msg.who + "형식오류. 저널을 확인해주세요!");

@@ -3,6 +3,7 @@
 // Roll20 attr 증가, 감소 api
 
 // ex. !ren 10 (+10), !ren -10 (-10), !ren d10(+1d10), !ren -4d30(-4d30)
+// d = dice , a = 등장, r = 리저렉트
 
 on("chat:message", msg => {
     if (msg.type === "api") {
@@ -74,6 +75,8 @@ on("chat:message", msg => {
                         sendChat(msg.who, "/em + " + num);
                     }
                     if(rFlag > -1) {
+                        let attr2 = findObjs({ type: "attribute", characterid: character.id, name: "hp" })[0];
+                        attr2.set("current", parseInt(attr2.get("current")) + num);
                         sendChat(msg.who, "&{template:default}{{name=리저렉트}}{{HP, 침식률=+" + num + "}}");
                     }
                 } else {
